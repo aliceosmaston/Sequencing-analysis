@@ -1,0 +1,91 @@
+---
+title: "Seq_analysis"
+author: "Alice Osmaston"
+date: "2024-04-25"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T)
+```
+
+```{r}
+# Load necessary packages
+pacman::p_load(tidyverse, dplyr, knitr, here, ggplot2)
+
+# Import the datasets from pore occupancy plots and pore scan plots
+poreoccupancy <- read_csv(here("data", "Pore_activity_%_pores_sequencing.csv"))
+porecount <- read_csv(here("data", "porecount2.csv"))
+```
+
+
+```{r}
+# Plot the raw data
+ggplot(data=poreoccupancy, aes(x=Hour, y=`% of pores sequencing (pore activity)`, color=Group))+ geom_point() + labs(title= "Percentage of sequencing pores over time (from pore occupancy plot)") + theme_minimal()
+```
+
+
+
+```{r}
+# plot the data using a log transformation on the y axis to make the data linear
+ggplot(data=poreoccupancy, aes(x=Hour, y=log(`% of pores sequencing (pore activity)`),color=Group))+ geom_point() + labs(title= "Percentage of sequencing pores over time (from pore occupancy plot)") + theme_minimal()
+```
+```{r}
+# simple linear regression model
+linear_model_occupancy <- lm(log(`% of pores sequencing (pore activity)`) ~ Hour * Group, data = poreoccupancy)
+
+# summarise simple linear regression model
+summary(linear_model_occupancy)
+
+# Plot overlaid linear model
+ggplot(data=poreoccupancy, aes(x=Hour, y=log(`% of pores sequencing (pore activity)`),color=Group))+ geom_point() + labs(title= "Percentage of sequencing pores over time (from pore occupancy plot)") + geom_smooth(method = "lm", formula = y ~ x, se = FALSE) + theme_minimal()
+```
+
+
+Baseline = -0.077025 which is (log) rate of decline in the reference group (phenol fragmented).
+Add adjusted rates to the baseline to calculate the slowest rate of decline:
+
+- **Phenol Fragmented:**
+  = `-0.077025`
+- **Phenol No Fragmented:**  
+  `-0.017183 + -0.077025` = `r -0.017183 + -0.077025`
+- **Zymo Kit Fragmented:**  
+  `0.037087 + -0.077025` = `r 0.037087 + -0.077025`
+- **Zymo Kit No Fragmented:**  
+  `0.004085 + -0.077025` = `r 0.004085 + -0.077025`
+
+
+```{r}
+# Fit a GLM with a gamma family
+gamma_glm_model_occupancy <- glm(`% of pores sequencing (pore activity)` ~ Hour * Group,
+                 family = Gamma(link = "log"), data = poreoccupancy)
+
+# Check the summary of the model
+summary(gamma_glm_model_occupancy)
+
+# Plot the GML with gamma link over the plot
+ggplot(data = poreoccupancy, aes(x = Hour, y = log(`% of pores sequencing (pore activity)`), color = Group)) +
+  geom_point() +
+  labs(title = "Percentage of sequencing pores over time (from pore occupancy plot)") +
+  stat_smooth(method = "glm", method.args = list(family = Gamma(link = "log")), formula = y ~ x, se = FALSE) +
+  theme_minimal()
+
+```
+Baseline = -0.0766737 which is (log) rate of decline in the reference group (phenol fragmented).
+Add adjusted rates to the baseline to calculate the slowest rate of decline:
+
+- **Phenol Fragmented:**
+  = `-0.0766737`
+- **Phenol No Fragmented:**  
+  `-0.0167150 + -0.0766737` = `r -0.0167150 + -0.0766737`
+- **Zymo Kit Fragmented:**  
+  `0.0369964 + -0.0766737` = `r 0.0369964 + -0.0766737`
+- **Zymo Kit No Fragmented:**  
+  `0.0047661 + -0.0766737` = `r 0.0047661 + -0.0766737`
+
+
+
+```{r}
+
+```
+

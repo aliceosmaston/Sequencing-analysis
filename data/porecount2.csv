@@ -1,0 +1,198 @@
+Hour,Number of available pores,Number of pores at start,Normalised number of pores,Group
+0,1264,1264,1,Zymo Kit No Fragmented
+1,1193,1264,0.943829114,Zymo Kit No Fragmented
+2,1117,1264,0.883702532,Zymo Kit No Fragmented
+3,1053,1264,0.83306962,Zymo Kit No Fragmented
+4,986,1264,0.780063291,Zymo Kit No Fragmented
+5,903,1264,0.714398734,Zymo Kit No Fragmented
+6,817,1264,0.646360759,Zymo Kit No Fragmented
+7,735,1264,0.581487342,Zymo Kit No Fragmented
+8,718,1264,0.568037975,Zymo Kit No Fragmented
+9,621,1264,0.491297468,Zymo Kit No Fragmented
+10,571,1264,0.451740506,Zymo Kit No Fragmented
+11,518,1264,0.409810127,Zymo Kit No Fragmented
+12,475,1264,0.375791139,Zymo Kit No Fragmented
+13,456,1264,0.360759494,Zymo Kit No Fragmented
+14,430,1264,0.340189873,Zymo Kit No Fragmented
+15,386,1264,0.305379747,Zymo Kit No Fragmented
+16,380,1264,0.300632911,Zymo Kit No Fragmented
+17,336,1264,0.265822785,Zymo Kit No Fragmented
+18,324,1264,0.256329114,Zymo Kit No Fragmented
+19,299,1264,0.236550633,Zymo Kit No Fragmented
+20,252,1264,0.199367089,Zymo Kit No Fragmented
+21,234,1264,0.185126582,Zymo Kit No Fragmented
+22,205,1264,0.162183544,Zymo Kit No Fragmented
+23,225,1264,0.178006329,Zymo Kit No Fragmented
+24,198,1264,0.15664557,Zymo Kit No Fragmented
+25,182,1264,0.143987342,Zymo Kit No Fragmented
+26,169,1264,0.133702532,Zymo Kit No Fragmented
+27,182,1264,0.143987342,Zymo Kit No Fragmented
+28,125,1264,0.098892405,Zymo Kit No Fragmented
+29,114,1264,0.090189873,Zymo Kit No Fragmented
+30,117,1264,0.092563291,Zymo Kit No Fragmented
+31,166,1264,0.131329114,Zymo Kit No Fragmented
+32,116,1264,0.091772152,Zymo Kit No Fragmented
+33,102,1264,0.080696203,Zymo Kit No Fragmented
+34,154,1264,0.121835443,Zymo Kit No Fragmented
+35,92,1264,0.07278481,Zymo Kit No Fragmented
+36,101,1264,0.079905063,Zymo Kit No Fragmented
+37,103,1264,0.081487342,Zymo Kit No Fragmented
+38,98,1264,0.077531646,Zymo Kit No Fragmented
+39,102,1264,0.080696203,Zymo Kit No Fragmented
+40,93,1264,0.073575949,Zymo Kit No Fragmented
+41,75,1264,0.059335443,Zymo Kit No Fragmented
+42,67,1264,0.053006329,Zymo Kit No Fragmented
+43,82,1264,0.064873418,Zymo Kit No Fragmented
+44,72,1264,0.056962025,Zymo Kit No Fragmented
+45,190,1264,0.150316456,Zymo Kit No Fragmented
+46,85,1264,0.067246835,Zymo Kit No Fragmented
+47,77,1264,0.060917722,Zymo Kit No Fragmented
+48,83,1264,0.065664557,Zymo Kit No Fragmented
+49,101,1264,0.079905063,Zymo Kit No Fragmented
+50,38,1264,0.030063291,Zymo Kit No Fragmented
+0,1254,1254,1,Phenol No Fragmented
+1,1230,1254,0.980861244,Phenol No Fragmented
+2,1194,1254,0.95215311,Phenol No Fragmented
+3,1117,1254,0.890749601,Phenol No Fragmented
+4,1051,1254,0.838118022,Phenol No Fragmented
+5,931,1254,0.742424242,Phenol No Fragmented
+6,874,1254,0.696969697,Phenol No Fragmented
+7,785,1254,0.62599681,Phenol No Fragmented
+8,720,1254,0.574162679,Phenol No Fragmented
+9,629,1254,0.501594896,Phenol No Fragmented
+10,572,1254,0.456140351,Phenol No Fragmented
+11,530,1254,0.422647528,Phenol No Fragmented
+12,476,1254,0.379585327,Phenol No Fragmented
+13,451,1254,0.359649123,Phenol No Fragmented
+14,415,1254,0.330940989,Phenol No Fragmented
+15,343,1254,0.273524721,Phenol No Fragmented
+16,315,1254,0.251196172,Phenol No Fragmented
+17,299,1254,0.238437002,Phenol No Fragmented
+18,253,1254,0.201754386,Phenol No Fragmented
+19,228,1254,0.181818182,Phenol No Fragmented
+20,208,1254,0.165869219,Phenol No Fragmented
+21,190,1254,0.151515152,Phenol No Fragmented
+22,207,1254,0.16507177,Phenol No Fragmented
+23,151,1254,0.120414673,Phenol No Fragmented
+24,143,1254,0.114035088,Phenol No Fragmented
+25,159,1254,0.126794258,Phenol No Fragmented
+26,159,1254,0.126794258,Phenol No Fragmented
+27,145,1254,0.115629984,Phenol No Fragmented
+28,112,1254,0.089314195,Phenol No Fragmented
+29,120,1254,0.09569378,Phenol No Fragmented
+30,118,1254,0.094098884,Phenol No Fragmented
+31,100,1254,0.079744817,Phenol No Fragmented
+32,123,1254,0.098086124,Phenol No Fragmented
+33,68,1254,0.054226475,Phenol No Fragmented
+34,76,1254,0.060606061,Phenol No Fragmented
+35,82,1254,0.06539075,Phenol No Fragmented
+36,89,1254,0.070972887,Phenol No Fragmented
+37,89,1254,0.070972887,Phenol No Fragmented
+38,78,1254,0.062200957,Phenol No Fragmented
+39,50,1254,0.039872408,Phenol No Fragmented
+0,1065,1101,0.967302452,Zymo Kit Fragmented
+1,1101,1101,1,Zymo Kit Fragmented
+2,1089,1101,0.989100817,Zymo Kit Fragmented
+3,1072,1101,0.973660309,Zymo Kit Fragmented
+4,1011,1101,0.918256131,Zymo Kit Fragmented
+5,986,1101,0.8955495,Zymo Kit Fragmented
+6,962,1101,0.873751135,Zymo Kit Fragmented
+7,945,1101,0.858310627,Zymo Kit Fragmented
+8,911,1101,0.827429609,Zymo Kit Fragmented
+9,877,1101,0.796548592,Zymo Kit Fragmented
+10,875,1101,0.794732062,Zymo Kit Fragmented
+11,848,1101,0.770208901,Zymo Kit Fragmented
+12,826,1101,0.750227066,Zymo Kit Fragmented
+13,788,1101,0.715712988,Zymo Kit Fragmented
+14,754,1101,0.684831971,Zymo Kit Fragmented
+15,712,1101,0.646684832,Zymo Kit Fragmented
+16,675,1101,0.613079019,Zymo Kit Fragmented
+17,685,1101,0.622161671,Zymo Kit Fragmented
+18,614,1101,0.557674841,Zymo Kit Fragmented
+19,587,1101,0.53315168,Zymo Kit Fragmented
+20,582,1101,0.528610354,Zymo Kit Fragmented
+21,548,1101,0.497729337,Zymo Kit Fragmented
+22,541,1101,0.49137148,Zymo Kit Fragmented
+23,563,1101,0.511353315,Zymo Kit Fragmented
+24,493,1101,0.44777475,Zymo Kit Fragmented
+25,511,1101,0.464123524,Zymo Kit Fragmented
+26,453,1101,0.411444142,Zymo Kit Fragmented
+27,454,1101,0.412352407,Zymo Kit Fragmented
+28,383,1101,0.347865577,Zymo Kit Fragmented
+29,396,1101,0.359673025,Zymo Kit Fragmented
+30,371,1101,0.336966394,Zymo Kit Fragmented
+31,378,1101,0.343324251,Zymo Kit Fragmented
+32,340,1101,0.308810173,Zymo Kit Fragmented
+33,298,1101,0.270663034,Zymo Kit Fragmented
+34,291,1101,0.264305177,Zymo Kit Fragmented
+35,294,1101,0.267029973,Zymo Kit Fragmented
+36,255,1101,0.231607629,Zymo Kit Fragmented
+37,283,1101,0.257039055,Zymo Kit Fragmented
+38,233,1101,0.211625795,Zymo Kit Fragmented
+39,238,1101,0.216167121,Zymo Kit Fragmented
+40,209,1101,0.18982743,Zymo Kit Fragmented
+41,165,1101,0.14986376,Zymo Kit Fragmented
+42,237,1101,0.215258856,Zymo Kit Fragmented
+43,210,1101,0.190735695,Zymo Kit Fragmented
+44,173,1101,0.157129882,Zymo Kit Fragmented
+45,145,1101,0.131698456,Zymo Kit Fragmented
+46,218,1101,0.198001817,Zymo Kit Fragmented
+47,159,1101,0.144414169,Zymo Kit Fragmented
+48,119,1101,0.10808356,Zymo Kit Fragmented
+49,121,1101,0.109900091,Zymo Kit Fragmented
+50,117,1101,0.10626703,Zymo Kit Fragmented
+51,141,1101,0.128065395,Zymo Kit Fragmented
+52,107,1101,0.097184378,Zymo Kit Fragmented
+53,145,1101,0.131698456,Zymo Kit Fragmented
+54,122,1101,0.110808356,Zymo Kit Fragmented
+55,96,1101,0.08719346,Zymo Kit Fragmented
+56,119,1101,0.10808356,Zymo Kit Fragmented
+57,155,1101,0.140781108,Zymo Kit Fragmented
+58,131,1101,0.118982743,Zymo Kit Fragmented
+59,113,1101,0.102633969,Zymo Kit Fragmented
+60,128,1101,0.116257947,Zymo Kit Fragmented
+61,100,1101,0.090826521,Zymo Kit Fragmented
+62,79,1101,0.071752952,Zymo Kit Fragmented
+63,77,1101,0.069936421,Zymo Kit Fragmented
+64,69,1101,0.0626703,Zymo Kit Fragmented
+65,72,1101,0.065395095,Zymo Kit Fragmented
+66,98,1101,0.089009991,Zymo Kit Fragmented
+67,81,1101,0.073569482,Zymo Kit Fragmented
+68,76,1101,0.069028156,Zymo Kit Fragmented
+69,96,1101,0.08719346,Zymo Kit Fragmented
+70,79,1101,0.071752952,Zymo Kit Fragmented
+0,754,754,1,Phenol Fragmented
+1,708,754,0.938992042,Phenol Fragmented
+2,644,754,0.854111406,Phenol Fragmented
+3,625,754,0.828912467,Phenol Fragmented
+4,565,754,0.74933687,Phenol Fragmented
+5,549,754,0.728116711,Phenol Fragmented
+6,519,754,0.688328912,Phenol Fragmented
+7,450,754,0.596816976,Phenol Fragmented
+8,415,754,0.550397878,Phenol Fragmented
+9,377,754,0.5,Phenol Fragmented
+10,358,754,0.474801061,Phenol Fragmented
+11,284,754,0.376657825,Phenol Fragmented
+12,295,754,0.391246684,Phenol Fragmented
+13,267,754,0.354111406,Phenol Fragmented
+14,245,754,0.324933687,Phenol Fragmented
+15,222,754,0.294429708,Phenol Fragmented
+16,186,754,0.24668435,Phenol Fragmented
+17,180,754,0.23872679,Phenol Fragmented
+18,179,754,0.237400531,Phenol Fragmented
+19,144,754,0.190981432,Phenol Fragmented
+20,135,754,0.179045093,Phenol Fragmented
+21,114,754,0.151193634,Phenol Fragmented
+22,128,754,0.169761273,Phenol Fragmented
+23,117,754,0.155172414,Phenol Fragmented
+24,108,754,0.143236074,Phenol Fragmented
+25,111,754,0.147214854,Phenol Fragmented
+26,129,754,0.171087533,Phenol Fragmented
+27,83,754,0.110079576,Phenol Fragmented
+28,79,754,0.104774536,Phenol Fragmented
+29,112,754,0.148541114,Phenol Fragmented
+30,85,754,0.112732095,Phenol Fragmented
+31,69,754,0.091511936,Phenol Fragmented
+32,99,754,0.131299735,Phenol Fragmented
+33,62,754,0.082228117,Phenol Fragmented
+34,59,754,0.078249337,Phenol Fragmented

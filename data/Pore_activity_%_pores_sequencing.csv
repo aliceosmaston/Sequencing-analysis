@@ -1,0 +1,207 @@
+Hour,% of pores sequencing (pore activity),% pores sequencing at start,Normalised % of pores sequencing,Group
+0,57.1,59.5,1.04,Zymo Kit No Fragmented
+1,59.5,59.5,1.00,Zymo Kit No Fragmented
+2,58.9,59.5,1.01,Zymo Kit No Fragmented
+3,56,59.5,1.06,Zymo Kit No Fragmented
+4,53,59.5,1.12,Zymo Kit No Fragmented
+5,48,59.5,1.24,Zymo Kit No Fragmented
+6,45.3,59.5,1.31,Zymo Kit No Fragmented
+7,41.1,59.5,1.45,Zymo Kit No Fragmented
+8,37.4,59.5,1.59,Zymo Kit No Fragmented
+9,33,59.5,1.80,Zymo Kit No Fragmented
+10,28.6,59.5,2.08,Zymo Kit No Fragmented
+11,26.3,59.5,2.26,Zymo Kit No Fragmented
+12,23.8,59.5,2.50,Zymo Kit No Fragmented
+13,21.1,59.5,2.82,Zymo Kit No Fragmented
+14,19.3,59.5,3.08,Zymo Kit No Fragmented
+15,18.8,59.5,3.16,Zymo Kit No Fragmented
+16,18,59.5,3.31,Zymo Kit No Fragmented
+17,16,59.5,3.72,Zymo Kit No Fragmented
+18,14.5,59.5,4.10,Zymo Kit No Fragmented
+19,12.3,59.5,4.84,Zymo Kit No Fragmented
+20,12.1,59.5,4.92,Zymo Kit No Fragmented
+21,10.2,59.5,5.83,Zymo Kit No Fragmented
+22,9.3,59.5,6.40,Zymo Kit No Fragmented
+23,8.3,59.5,7.17,Zymo Kit No Fragmented
+24,8.1,59.5,7.35,Zymo Kit No Fragmented
+25,7.7,59.5,7.73,Zymo Kit No Fragmented
+26,6.4,59.5,9.30,Zymo Kit No Fragmented
+27,6.2,59.5,9.60,Zymo Kit No Fragmented
+28,5.4,59.5,11.02,Zymo Kit No Fragmented
+29,4.8,59.5,12.40,Zymo Kit No Fragmented
+30,3.8,59.5,15.66,Zymo Kit No Fragmented
+31,3.3,59.5,18.03,Zymo Kit No Fragmented
+32,3.5,59.5,17.00,Zymo Kit No Fragmented
+33,4.2,59.5,14.17,Zymo Kit No Fragmented
+34,3.2,59.5,18.59,Zymo Kit No Fragmented
+35,3.3,59.5,18.03,Zymo Kit No Fragmented
+36,3.7,59.5,16.08,Zymo Kit No Fragmented
+37,2.2,59.5,27.05,Zymo Kit No Fragmented
+38,3.5,59.5,17.00,Zymo Kit No Fragmented
+39,2.9,59.5,20.52,Zymo Kit No Fragmented
+40,2.9,59.5,20.52,Zymo Kit No Fragmented
+41,3,59.5,19.83,Zymo Kit No Fragmented
+42,2.8,59.5,21.25,Zymo Kit No Fragmented
+43,2.4,59.5,24.79,Zymo Kit No Fragmented
+44,1.9,59.5,31.32,Zymo Kit No Fragmented
+45,2.6,59.5,22.88,Zymo Kit No Fragmented
+46,2.3,59.5,25.87,Zymo Kit No Fragmented
+47,3.4,59.5,17.50,Zymo Kit No Fragmented
+48,2.5,59.5,23.80,Zymo Kit No Fragmented
+49,1.7,59.5,35.00,Zymo Kit No Fragmented
+50,1.9,59.5,31.32,Zymo Kit No Fragmented
+51,2,59.5,29.75,Zymo Kit No Fragmented
+52,2.1,59.5,28.33,Zymo Kit No Fragmented
+0,63.4,63.9,1.01,Phenol No Fragmented
+1,63.5,63.9,1.01,Phenol No Fragmented
+2,63.9,63.9,1.00,Phenol No Fragmented
+3,60.2,63.9,1.06,Phenol No Fragmented
+4,56.5,63.9,1.13,Phenol No Fragmented
+5,52.4,63.9,1.22,Phenol No Fragmented
+6,48.2,63.9,1.33,Phenol No Fragmented
+7,43.6,63.9,1.47,Phenol No Fragmented
+8,39.9,63.9,1.60,Phenol No Fragmented
+9,36.2,63.9,1.77,Phenol No Fragmented
+10,32.3,63.9,1.98,Phenol No Fragmented
+11,29.9,63.9,2.14,Phenol No Fragmented
+12,27,63.9,2.37,Phenol No Fragmented
+13,24.5,63.9,2.61,Phenol No Fragmented
+14,23.5,63.9,2.72,Phenol No Fragmented
+15,20.1,63.9,3.18,Phenol No Fragmented
+16,17.7,63.9,3.61,Phenol No Fragmented
+17,15.6,63.9,4.10,Phenol No Fragmented
+18,15.6,63.9,4.10,Phenol No Fragmented
+19,11.9,63.9,5.37,Phenol No Fragmented
+20,11.6,63.9,5.51,Phenol No Fragmented
+21,8.8,63.9,7.26,Phenol No Fragmented
+22,8.2,63.9,7.79,Phenol No Fragmented
+23,8.7,63.9,7.34,Phenol No Fragmented
+24,7,63.9,9.13,Phenol No Fragmented
+25,5.9,63.9,10.83,Phenol No Fragmented
+26,6.2,63.9,10.31,Phenol No Fragmented
+27,5.9,63.9,10.83,Phenol No Fragmented
+28,5.6,63.9,11.41,Phenol No Fragmented
+29,4.2,63.9,15.21,Phenol No Fragmented
+30,4,63.9,15.98,Phenol No Fragmented
+31,3.9,63.9,16.38,Phenol No Fragmented
+32,3.3,63.9,19.36,Phenol No Fragmented
+33,2.9,63.9,22.03,Phenol No Fragmented
+34,3.3,63.9,19.36,Phenol No Fragmented
+35,2.8,63.9,22.82,Phenol No Fragmented
+36,3,63.9,21.30,Phenol No Fragmented
+37,3,63.9,21.30,Phenol No Fragmented
+38,3.3,63.9,19.36,Phenol No Fragmented
+39,2.2,63.9,29.05,Phenol No Fragmented
+40,2.6,63.9,24.58,Phenol No Fragmented
+41,1.1,63.9,58.09,Phenol No Fragmented
+0,49.8,49.8,1.00,Phenol Fragmented
+1,49.6,49.8,1.00,Phenol Fragmented
+2,47.3,49.8,1.05,Phenol Fragmented
+3,45.5,49.8,1.09,Phenol Fragmented
+4,43.6,49.8,1.14,Phenol Fragmented
+5,41.5,49.8,1.20,Phenol Fragmented
+6,38.6,49.8,1.29,Phenol Fragmented
+7,35.4,49.8,1.41,Phenol Fragmented
+8,32.3,49.8,1.54,Phenol Fragmented
+9,29.4,49.8,1.69,Phenol Fragmented
+10,27.2,49.8,1.83,Phenol Fragmented
+11,24,49.8,2.08,Phenol Fragmented
+12,21.9,49.8,2.27,Phenol Fragmented
+13,22.4,49.8,2.22,Phenol Fragmented
+14,19.1,49.8,2.61,Phenol Fragmented
+15,16.8,49.8,2.96,Phenol Fragmented
+16,14.8,49.8,3.36,Phenol Fragmented
+17,13.8,49.8,3.61,Phenol Fragmented
+18,13,49.8,3.83,Phenol Fragmented
+19,13,49.8,3.83,Phenol Fragmented
+20,9.6,49.8,5.19,Phenol Fragmented
+21,8.7,49.8,5.72,Phenol Fragmented
+22,8.1,49.8,6.15,Phenol Fragmented
+23,8.3,49.8,6.00,Phenol Fragmented
+24,8.1,49.8,6.15,Phenol Fragmented
+25,7.6,49.8,6.55,Phenol Fragmented
+26,7,49.8,7.11,Phenol Fragmented
+27,6.8,49.8,7.32,Phenol Fragmented
+28,6.1,49.8,8.16,Phenol Fragmented
+29,5.3,49.8,9.40,Phenol Fragmented
+30,5.8,49.8,8.59,Phenol Fragmented
+31,6.2,49.8,8.03,Phenol Fragmented
+32,4.8,49.8,10.38,Phenol Fragmented
+33,5.3,49.8,9.40,Phenol Fragmented
+34,5.4,49.8,9.22,Phenol Fragmented
+35,3.6,49.8,13.83,Phenol Fragmented
+0,72.9,76.1,1.04,Zymo Kit Fragmented
+1,76.1,76.1,1.00,Zymo Kit Fragmented
+2,75.9,76.1,1.00,Zymo Kit Fragmented
+3,74.5,76.1,1.02,Zymo Kit Fragmented
+4,73.9,76.1,1.03,Zymo Kit Fragmented
+5,72.2,76.1,1.05,Zymo Kit Fragmented
+6,68.7,76.1,1.11,Zymo Kit Fragmented
+7,67,76.1,1.14,Zymo Kit Fragmented
+8,65.8,76.1,1.16,Zymo Kit Fragmented
+9,65.2,76.1,1.17,Zymo Kit Fragmented
+10,62.8,76.1,1.21,Zymo Kit Fragmented
+11,61.6,76.1,1.24,Zymo Kit Fragmented
+12,60.8,76.1,1.25,Zymo Kit Fragmented
+13,57.9,76.1,1.31,Zymo Kit Fragmented
+14,58.1,76.1,1.31,Zymo Kit Fragmented
+15,55.8,76.1,1.36,Zymo Kit Fragmented
+16,53.8,76.1,1.41,Zymo Kit Fragmented
+17,53.8,76.1,1.41,Zymo Kit Fragmented
+18,54.1,76.1,1.41,Zymo Kit Fragmented
+19,48,76.1,1.59,Zymo Kit Fragmented
+20,45.9,76.1,1.66,Zymo Kit Fragmented
+21,46.3,76.1,1.64,Zymo Kit Fragmented
+22,43.9,76.1,1.73,Zymo Kit Fragmented
+23,41.6,76.1,1.83,Zymo Kit Fragmented
+24,43.9,76.1,1.73,Zymo Kit Fragmented
+25,41.6,76.1,1.83,Zymo Kit Fragmented
+26,40,76.1,1.90,Zymo Kit Fragmented
+27,38.7,76.1,1.97,Zymo Kit Fragmented
+28,36.2,76.1,2.10,Zymo Kit Fragmented
+29,34.8,76.1,2.19,Zymo Kit Fragmented
+30,31.2,76.1,2.44,Zymo Kit Fragmented
+31,32.8,76.1,2.32,Zymo Kit Fragmented
+32,30.5,76.1,2.50,Zymo Kit Fragmented
+33,28.1,76.1,2.71,Zymo Kit Fragmented
+34,27.4,76.1,2.78,Zymo Kit Fragmented
+35,22.9,76.1,3.32,Zymo Kit Fragmented
+36,22.9,76.1,3.32,Zymo Kit Fragmented
+37,22.6,76.1,3.37,Zymo Kit Fragmented
+38,20.6,76.1,3.69,Zymo Kit Fragmented
+39,24.4,76.1,3.12,Zymo Kit Fragmented
+40,19.9,76.1,3.82,Zymo Kit Fragmented
+41,19.4,76.1,3.92,Zymo Kit Fragmented
+42,17.6,76.1,4.32,Zymo Kit Fragmented
+43,13.8,76.1,5.51,Zymo Kit Fragmented
+44,16,76.1,4.76,Zymo Kit Fragmented
+45,17.9,76.1,4.25,Zymo Kit Fragmented
+46,16,76.1,4.76,Zymo Kit Fragmented
+47,13.3,76.1,5.72,Zymo Kit Fragmented
+48,12.4,76.1,6.14,Zymo Kit Fragmented
+49,16,76.1,4.76,Zymo Kit Fragmented
+50,11.1,76.1,6.86,Zymo Kit Fragmented
+51,8,76.1,9.51,Zymo Kit Fragmented
+52,8.2,76.1,9.28,Zymo Kit Fragmented
+53,9.1,76.1,8.36,Zymo Kit Fragmented
+54,10.9,76.1,6.98,Zymo Kit Fragmented
+55,9.2,76.1,8.27,Zymo Kit Fragmented
+56,13.1,76.1,5.81,Zymo Kit Fragmented
+57,9.5,76.1,8.01,Zymo Kit Fragmented
+58,7.7,76.1,9.88,Zymo Kit Fragmented
+59,9.4,76.1,8.10,Zymo Kit Fragmented
+60,10.2,76.1,7.46,Zymo Kit Fragmented
+61,10.2,76.1,7.46,Zymo Kit Fragmented
+62,8.1,76.1,9.40,Zymo Kit Fragmented
+63,9.1,76.1,8.36,Zymo Kit Fragmented
+64,8.6,76.1,8.85,Zymo Kit Fragmented
+65,6.2,76.1,12.27,Zymo Kit Fragmented
+66,5.1,76.1,14.92,Zymo Kit Fragmented
+67,4.7,76.1,16.19,Zymo Kit Fragmented
+68,4.5,76.1,16.91,Zymo Kit Fragmented
+69,5.9,76.1,12.90,Zymo Kit Fragmented
+70,7,76.1,10.87,Zymo Kit Fragmented
+71,6.2,76.1,12.27,Zymo Kit Fragmented
+72,5.3,76.1,14.36,Zymo Kit Fragmented
+73,7.1,76.1,10.72,Zymo Kit Fragmented
+74,6,76.1,12.68,Zymo Kit Fragmented
