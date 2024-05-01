@@ -18,7 +18,7 @@ pacman::p_load(tidyverse, dplyr, knitr, here, ggplot2)
 
 # Import the datasets from pore occupancy plots and pore scan plots
 poreoccupancy <- read_csv(here("data", "Pore_activity_%_pores_sequencing.csv"))
-porecount <- read_csv(here("data", "porecount2.csv"))
+porecount2 <- read_csv(here("data", "porecount2.csv"))
 ```
 
 # Analysis of run performance over time using the Pore Occupancy plots from MinKnow Software
@@ -338,6 +338,48 @@ half_cropped_occupancy <- front_cropped_occupancy %>%
 
 ```
 
+# Run simple linear model on cropped data
+
+```{r}
+# simple linear regression model
+linear_model_occupancy_half_cropped_normalised <- lm(log(`Normalised % of pores sequencing`) ~ Hour * Group, data = half_cropped_occupancy)
+
+# summarise simple linear regression model
+summary(linear_model_occupancy_half_cropped_normalised)
+
+# Plot overlaid linear model
+ggplot(data=half_cropped_occupancy, aes(x=Hour, y=log(`Normalised % of pores sequencing`),color=Group))+ geom_point() + labs(title= "Normalised Percentage of sequencing pores over time (start and final 1/2 cropped)") + geom_smooth(method = "lm", formula = y ~ x, se = FALSE) + theme_minimal()
+```
+
+Baseline = -0.077675 which is (log) rate of decline in the reference
+group (phenol fragmented). Add adjusted rates to the baseline to
+calculate the slowest rate of decline:
+
+-   **Phenol Fragmented:** = `-0.087147`
+-   **Phenol No Fragmented:**\
+    `-0.011505 + -0.087147` = `r -0.011505 + -0.087147`
+-   **Zymo Kit Fragmented:**\
+    `0.053055 + -0.087147` = `r 0.053055 + -0.087147`
+-   **Zymo Kit No Fragmented:**\
+    `-0.006785 + -0.087147` = `r -0.006785 + -0.087147`
+
+## Phenol No Fragmented vs. Zymo Kit No Fagmented. RESULT = Zymo No Fragmented is only marginally better (sig = \* = 0.0457)
+
+```{r}
+lm_comparison3 <- lm(log(`Normalised % of pores sequencing`) ~ Hour * Group,
+                              data = half_cropped_occupancy[half_cropped_occupancy$Group == 'Zymo Kit No Fragmented' | 
+                                                 half_cropped_occupancy$Group == 'Phenol No Fragmented',])
+summary(lm_comparison3)
+```
+
+## Phenol No Fragmented vs Phenol Fragmented. RESULT = Phenol Fragmented better (sig = \*\*)
+
+```{r}
+lm_comparison4 <- lm(log(`Normalised % of pores sequencing`) ~ Hour * Group,
+                              data = half_cropped_occupancy[half_cropped_occupancy$Group == 'Phenol Fragmented' | 
+                                                 half_cropped_occupancy$Group == 'Phenol No Fragmented',])
+summary(lm_comparison4)
+```
 Check new cropped dataset to see if simple linear model is appropriate.
 
 ## 1. Check linearity. Check that the relationship between the
@@ -430,61 +472,20 @@ Interpretation: The ACF values after 0 fall mainly within the 95%
 confidence intervals (blue dashed lines) therefore autocorrelations are
 not of concern in this data.
 
-# Run simple linear model on cropped data
-
-```{r}
-# simple linear regression model
-linear_model_occupancy_half_cropped_normalised <- lm(log(`Normalised % of pores sequencing`) ~ Hour * Group, data = half_cropped_occupancy)
-
-# summarise simple linear regression model
-summary(linear_model_occupancy_half_cropped_normalised)
-
-# Plot overlaid linear model
-ggplot(data=half_cropped_occupancy, aes(x=Hour, y=log(`Normalised % of pores sequencing`),color=Group))+ geom_point() + labs(title= "Normalised Percentage of sequencing pores over time (start and final 1/2 cropped)") + geom_smooth(method = "lm", formula = y ~ x, se = FALSE) + theme_minimal()
-```
-
-Baseline = -0.077675 which is (log) rate of decline in the reference
-group (phenol fragmented). Add adjusted rates to the baseline to
-calculate the slowest rate of decline:
-
--   **Phenol Fragmented:** = `-0.087147`
--   **Phenol No Fragmented:**\
-    `-0.011505 + -0.087147` = `r -0.011505 + -0.087147`
--   **Zymo Kit Fragmented:**\
-    `0.053055 + -0.087147` = `r 0.053055 + -0.087147`
--   **Zymo Kit No Fragmented:**\
-    `-0.006785 + -0.087147` = `r -0.006785 + -0.087147`
-
-## Phenol No Fragmented vs. Zymo Kit No Fagmented. RESULT = Zymo No Fragmented is only marginally better (sig = \* = 0.0457)
-
-```{r}
-lm_comparison1 <- lm(log(`Normalised % of pores sequencing`) ~ Hour * Group,
-                              data = half_cropped_occupancy[half_cropped_occupancy$Group == 'Zymo Kit No Fragmented' | 
-                                                 half_cropped_occupancy$Group == 'Phenol No Fragmented',])
-summary(lm_comparison1)
-```
-
-## Phenol No Fragmented vs Phenol Fragmented. RESULT = Phenol Fragmented better (sig = \*\*)
-
-```{r}
-lm_comparison2 <- lm(log(`Normalised % of pores sequencing`) ~ Hour * Group,
-                              data = half_cropped_occupancy[half_cropped_occupancy$Group == 'Phenol Fragmented' | 
-                                                 half_cropped_occupancy$Group == 'Phenol No Fragmented',])
-summary(lm_comparison2)
-```
 
 # Plot the pore count data (number of active pores)
 
 ```{r}
 # Plot the raw data
-ggplot(data=porecount, aes(x=Hour, y=`Number of available pores`, color=Group))+ geom_point() + labs(title= "Number of active pores over time") + theme_minimal()
+ggplot(data=porecount2, aes(x=Hour, y=`Number of available pores`, color=Group))+ geom_point() + labs(title= "Number of active pores over time") + theme_minimal()
 ```
 
 The data was log transformed to linearise it.
 
 ```{r}
+
 # plot the data using a log transformation on the y axis to make the data linear
-ggplot(data=porecount, aes(x=Hour, y=log(`Number of available pores`),color=Group))+ geom_point() + labs(title= "Percentage of sequencing pores over time") + theme_minimal()
+ggplot(data=porecount2, aes(x=Hour, y=log(`Number of available pores`),color=Group))+ geom_point() + labs(title= "Percentage of sequencing pores over time") + theme_minimal()
 ```
 
 Prepare data to crop the first 1 hour (where percentage of pores
@@ -494,11 +495,11 @@ towards zero.
 
 ```{r}
 # Calculate the maximum hour for each group
-max_hours <- porecount %>%
+max_hours <- porecount2 %>%
   group_by(Group) %>%
   summarise(MaxHour = max(Hour))
 # Merge the maximum hours with the original data
-porecount <- porecount %>%
+porecount2 <- porecount2 %>%
   left_join(max_hours, by = "Group")
 
 ```
@@ -509,7 +510,7 @@ datapoints than for the occupancy data. r 'print(max_hours)\`
 
 ```{r}
 #crop the first 1 hour off each condition
-front_cropped_count <- porecount %>% 
+front_cropped_count <- porecount2 %>% 
   subset(Hour >= 2)
 ```
 
@@ -562,18 +563,84 @@ ggplot(data=cropped_90_count, aes(x=Hour, y=log(`Normalised number of pores`),co
 
 ## Phenol No Fragmented vs Zymo Kit No Fragmented. RESULT = Zymo Kit No Fragmented is better (sig = \*\*\*)
 
+## Phenol No Fragmented vs Zymo No Fragmented. RESULT = Zymo No Fragmented is better (sig = ***)
+
 ```{r}
-lm_comparison2 <- lm(log(`Normalised number of pores`) ~ Hour * Group,
+lm_comparison5 <- lm(log(`Normalised number of pores`) ~ Hour * Group,
                               data = cropped_90_count[cropped_90_count$Group == 'Zymo Kit No Fragmented' | 
                                                  cropped_90_count$Group == 'Phenol No Fragmented',])
-summary(lm_comparison2)
+summary(lm_comparison5)
 ```
 
-## Phenol No Fragmented vs Phenol Fragmented. RESULT = Phenol Fragmented better (sig = \*\*)
+## Phenol No Fragmented vs Phenol Fragmented. RESULT = both conditions are the same. p=0.2211
 
 ```{r}
-lm_comparison4 <- lm(log(`Normalised % of pores sequencing`) ~ Hour * Group,
-                              data = half_cropped_occupancy[half_cropped_occupancy$Group == 'Phenol Fragmented' | 
-                                                 half_cropped_occupancy$Group == 'Phenol No Fragmented',])
-summary(lm_comparison4)
+lm_comparison6 <- lm(log(`Normalised number of pores`) ~ Hour * Group,
+                              data = cropped_90_count[cropped_90_count$Group == 'Phenol Fragmented' | 
+                                                 cropped_90_count$Group == 'Phenol No Fragmented',])
+summary(lm_comparison6)
+```
+
+# Re-make the graph with so all lines start at zero
+I manually cut of the first hour off Zymo kit fragmented because the number active of pores in the 2nd hour was greater than in the first hour.
+
+```{r}
+# Import the datasets for pore scan plot with 1st hour manually edited
+porecount3 <- read_csv(here("data", "porecount3.csv"))
+```
+
+
+```{r}
+# Calculate the maximum hour for each group
+max_hours <- porecount3 %>%
+  group_by(Group) %>%
+  summarise(MaxHour = max(Hour))
+# Merge the maximum hours with the original data
+porecount3 <- porecount3 %>%
+  left_join(max_hours, by = "Group")
+
+```
+
+```{r}
+# Applying the crop conditions for each group
+cropped_90_count_2 <- porecount3 %>%
+  filter(
+    (Group == "Zymo Kit Fragmented" & Hour <= (MaxHour - 47)) |
+    (Group == "Zymo Kit No Fragmented" & Hour <= (MaxHour - 25)) |
+    (Group == "Phenol No Fragmented" & Hour <= (MaxHour - 23)) |
+    (Group == "Phenol Fragmented" & Hour <= (MaxHour - 10))
+  )
+
+```
+
+```{r}
+# simple linear regression model
+linear_count_90_norm_2 <- lm(log(`Normalised number of pores`) ~ Hour * Group, data = cropped_90_count_2)
+
+# summarise simple linear regression model
+summary(linear_count_90_norm_2)
+
+# Plot overlaid linear model
+ggplot(data=cropped_90_count_2, aes(x=Hour, y=log(`Normalised number of pores`),color=Group))+ geom_point() + labs(title= "Normalised count of sequencing pores over time (90% of data)") + geom_smooth(method = "lm", formula = y ~ x, se = FALSE) + theme_minimal()
+```
+
+# Do the relevant comparasions 
+
+## Phenol No Fragmented vs Zymo No Fragmented. RESULT = Zymo No Fragmented is better (sig=***)
+
+```{r}
+lm_comparison6 <- lm(log(`Normalised number of pores`) ~ Hour * Group,
+                              data = cropped_90_count_2[cropped_90_count_2$Group == 'Zymo Kit No Fragmented' | 
+                                                 cropped_90_count_2$Group == 'Phenol No Fragmented',])
+summary(lm_comparison6)
+```
+
+
+## Phenol No Fragmented vs Phenol Fragmented. RESULT = No difference
+
+```{r}
+lm_comparison7 <- lm(log(`Normalised number of pores`) ~ Hour * Group,
+                              data = cropped_90_count_2[cropped_90_count_2$Group == 'Phenol Fragmented' | 
+                                                 cropped_90_count_2$Group == 'Phenol No Fragmented',])
+summary(lm_comparison7)
 ```
