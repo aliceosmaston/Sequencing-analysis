@@ -32,22 +32,17 @@ The data was log transformed to linearise it.
 
 ```{r}
 # plot the data using a log transformation on the y axis to make the data linear
-ggplot(data=porecount2, aes(x=Hour, y=log(`Number of available pores`),color=Group))+ geom_point() + labs(title= "Percentage of sequencing pores over time") + theme_minimal()
+ggplot(data=porecount2, aes(x=Hour, y=log(`Number of available pores`),color=Group))+ geom_point() + labs(title= "Number of active pores over time") + theme_minimal()
 ```
 
-Prepare data to crop the first 1 hour (where percentage of pores
-sequencing slowly rises) and the final part of the run, where percentage
+Edit data to crop the first hour (hour 0) from each run. Because in some cases the number of available rises before falling.
+Later we will also removed the final part of the run, where percentage
 of pores sequencing is variable and non-informative as it tails off
 towards zero.
 
-```{r}
-# #crop the first 1 hour off each condition
-# front_cropped_count <- porecount2 %>% 
-#   subset(Hour >= 1)
-```
 
 ```{r}
-# Read dataset with first hour removed and normalised pore count column adjusted to the value in hour=1. 
+# Import dataset with first hour removed and normalised pore count column adjusted to the value in hour=1. 
 porecount3 <- read_csv(here("data", "porecount3.csv"))
 ```
 
@@ -61,6 +56,29 @@ summary(lm_1)
 
 # Plot overlaid linear model
 ggplot(data=porecount3, aes(x=Hour, y=log(`Number of available pores`),color=Group))+ geom_point() + labs(title= "Number of available pores over time") + geom_smooth(method = "lm", formula = y ~ x, se = FALSE) + theme_minimal()
+```
+Interpretation of linear model coefficients:
+Rate of decrease of available pores in Phenol Fragmented group = Baseline = -0.074493 
+Phenol No Fragmented = -0.074493 + -0.006560 = `r -0.074493 + -0.006560`
+Zymo Kit Fragmented = -0.074493 + 0.031813 = `r -0.074493 + 0.031813`
+Zymo Kit No Fragmented = -0.074493 + 0.015106 = `r -0.074493 + 0.015106`
+
+## Phenol No Fragmented vs Zymo No Fragmented. RESULT = Zymo No Fragmented is better (sig = ***)
+
+```{r}
+lm_comparison1 <- lm(log(`Normalised number of pores`) ~ Hour * Group,
+                              data = porecount3[porecount3$Group == 'Zymo Kit No Fragmented' | 
+                                                 porecount3$Group == 'Phenol No Fragmented',])
+summary(lm_comparison1)
+```
+
+## Phenol No Fragmented vs Phenol Fragmented. RESULT = Phenol fragmented is better (sig = *)
+
+```{r}
+lm_comparison2 <- lm(log(`Normalised number of pores`) ~ Hour * Group,
+                              data = porecount3[porecount3$Group == 'Phenol Fragmented' | 
+                                                 porecount3$Group == 'Phenol No Fragmented',])
+summary(lm_comparison2)
 ```
 
 
@@ -137,17 +155,17 @@ Zymo Kit No Fragmented = -0.086804 + 0.009686 = `r -0.086804 + 0.009686`
 ## Phenol No Fragmented vs Zymo No Fragmented. RESULT = Zymo No Fragmented is better (sig = ***)
 
 ```{r}
-lm_comparison1 <- lm(log(`Normalised number of pores`) ~ Hour * Group,
+lm_comparison3 <- lm(log(`Normalised number of pores`) ~ Hour * Group,
                               data = cropped_90_count[cropped_90_count$Group == 'Zymo Kit No Fragmented' | 
                                                  cropped_90_count$Group == 'Phenol No Fragmented',])
-summary(lm_comparison1)
+summary(lm_comparison3)
 ```
 
 ## Phenol No Fragmented vs Phenol Fragmented. RESULT = Phenol fragmented is better (sig = ***)
 
 ```{r}
-lm_comparison2 <- lm(log(`Normalised number of pores`) ~ Hour * Group,
+lm_comparison4 <- lm(log(`Normalised number of pores`) ~ Hour * Group,
                               data = cropped_90_count[cropped_90_count$Group == 'Phenol Fragmented' | 
                                                  cropped_90_count$Group == 'Phenol No Fragmented',])
-summary(lm_comparison2)
+summary(lm_comparison4)
 ```
