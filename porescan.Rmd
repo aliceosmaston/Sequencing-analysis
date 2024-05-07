@@ -228,7 +228,7 @@ lm_comparison4 <- lm(log(`Normalised number of pores`) ~ Hour * Group,
 summary(lm_comparison4)
 ```
 
-### Phenol Fragmented vs Zymo Fragmented. RESULT = Zymo No Fragmented is better 0.04 (sig = \*\*\*)
+### Phenol Fragmented vs Zymo Fragmented. RESULT = Zymo Fragmented is better 0.04 (sig = \*\*\*)
 
 ```{r}
 lm_comparison5 <- lm(log(`Normalised number of pores`) ~ Hour * Group,
@@ -251,3 +251,5 @@ summary(lm_comparison6)
 The pairwise comparisons in terms of the rate of decline in available pores shows that Zymo Kit is always associated with a slower decline vs Phenol and fragmentation always has slower decline as compared with the "not fragmented" conditions. 
 
 The two analyses for assessing the performance of the sequencing runs are in agreement and both undoubtedly show the superior performance of the Zymo Kit when used with fragmented samples. In both analyses this combination of conditions is markedly better then any other conditions.
+
+The only slight conflict in results is that in the table of predicted data outputs, the two "not fragmented conditions were the worst" whereas in the pore depletion analysis, the two phenol methods are the worst. 

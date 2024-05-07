@@ -446,6 +446,9 @@ zymo not fragmented condition.</p>
 crop off the end of the run which will be used in later analysis.</p>
 </div>
 </div>
+<div id="pore-depletion-rate-over-time" class="section level2">
+<h2>2. Pore depletion rate over time</h2>
+</div>
 <div id="plot-the-pore-count-data-number-of-active-pores" class="section level1">
 <h1>Plot the pore count data (number of active pores)</h1>
 <pre class="r"><code># Plot the raw data
@@ -665,9 +668,9 @@ of</h3>
 </div>
 <div id="pairwise-comparisons-1" class="section level2">
 <h2>Pairwise comparisons</h2>
-<div id="phenol-no-fragmented-vs-zymo-no-fragmented.-result-zymo-no-fragmented-is-better-sig-1" class="section level3">
+<div id="phenol-no-fragmented-vs-zymo-no-fragmented.-result-zymo-no-fragmented-is-better-0.02-sig" class="section level3">
 <h3>Phenol No Fragmented vs Zymo No Fragmented. RESULT = Zymo No
-Fragmented is better (sig = ***)</h3>
+Fragmented is better 0.02 (sig = ***)</h3>
 <pre class="r"><code>lm_comparison3 &lt;- lm(log(`Normalised number of pores`) ~ Hour * Group,
                               data = cropped_90_count[cropped_90_count$Group == &#39;Zymo Kit No Fragmented&#39; | 
                                                  cropped_90_count$Group == &#39;Phenol No Fragmented&#39;,])
@@ -695,9 +698,9 @@ summary(lm_comparison3)</code></pre>
 ## Multiple R-squared:  0.9891, Adjusted R-squared:  0.9885 
 ## F-statistic:  1514 on 3 and 50 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
-<div id="phenol-no-fragmented-vs-phenol-fragmented.-result-phenol-fragmented-is-better-sig-1" class="section level3">
-<h3>Phenol No Fragmented vs Phenol Fragmented. RESULT = Phenol
-fragmented is better (sig = ***)</h3>
+<div id="phenol-no-fragmented-vs-phenol-fragmented.-result-phenol-no-fragmented-is-worse--0.01-sig" class="section level3">
+<h3>Phenol No Fragmented vs Phenol Fragmented. RESULT = Phenol no
+fragmented is worse -0.01 (sig = ***)</h3>
 <pre class="r"><code>lm_comparison4 &lt;- lm(log(`Normalised number of pores`) ~ Hour * Group,
                               data = cropped_90_count[cropped_90_count$Group == &#39;Phenol Fragmented&#39; | 
                                                  cropped_90_count$Group == &#39;Phenol No Fragmented&#39;,])
@@ -725,6 +728,82 @@ summary(lm_comparison4)</code></pre>
 ## Multiple R-squared:  0.993,  Adjusted R-squared:  0.9925 
 ## F-statistic:  1947 on 3 and 41 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
+<div id="phenol-fragmented-vs-zymo-fragmented.-result-zymo-fragmented-is-better-0.04-sig" class="section level3">
+<h3>Phenol Fragmented vs Zymo Fragmented. RESULT = Zymo Fragmented is
+better 0.04 (sig = ***)</h3>
+<pre class="r"><code>lm_comparison5 &lt;- lm(log(`Normalised number of pores`) ~ Hour * Group,
+                              data = cropped_90_count[cropped_90_count$Group == &#39;Zymo Kit Fragmented&#39; | 
+                                                 cropped_90_count$Group == &#39;Phenol Fragmented&#39;,])
+summary(lm_comparison5)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = log(`Normalised number of pores`) ~ Hour * Group, 
+##     data = cropped_90_count[cropped_90_count$Group == &quot;Zymo Kit Fragmented&quot; | 
+##         cropped_90_count$Group == &quot;Phenol Fragmented&quot;, ])
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.30870 -0.04590  0.01864  0.04740  0.13975 
+## 
+## Coefficients:
+##                                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                    0.133261   0.031560   4.222 8.04e-05 ***
+## Hour                          -0.086804   0.002209 -39.300  &lt; 2e-16 ***
+## GroupZymo Kit Fragmented       0.019224   0.039369   0.488    0.627    
+## Hour:GroupZymo Kit Fragmented  0.043532   0.002406  18.095  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.0749 on 62 degrees of freedom
+## Multiple R-squared:  0.9835, Adjusted R-squared:  0.9827 
+## F-statistic:  1229 on 3 and 62 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div id="zymo-kit-no-fragmented-vs-zymo-kit-fragmented.-result-zymo-kit-no-fragmented-is-worse--0.03-sig" class="section level3">
+<h3>Zymo Kit No Fragmented vs Zymo Kit Fragmented. RESULT = Zymo Kit no
+fragmented is worse -0.03 (sig = ***)</h3>
+<pre class="r"><code>lm_comparison6 &lt;- lm(log(`Normalised number of pores`) ~ Hour * Group,
+                              data = cropped_90_count[cropped_90_count$Group == &#39;Zymo Kit Fragmented&#39; | 
+                                                 cropped_90_count$Group == &#39;Zymo Kit No Fragmented&#39;,])
+summary(lm_comparison6)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = log(`Normalised number of pores`) ~ Hour * Group, 
+##     data = cropped_90_count[cropped_90_count$Group == &quot;Zymo Kit Fragmented&quot; | 
+##         cropped_90_count$Group == &quot;Zymo Kit No Fragmented&quot;, ])
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.30870 -0.03945  0.01449  0.04358  0.35577 
+## 
+## Coefficients:
+##                                   Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                       0.152485   0.027200   5.606  3.7e-07 ***
+## Hour                             -0.043271   0.001102 -39.264  &lt; 2e-16 ***
+## GroupZymo Kit No Fragmented      -0.089861   0.041120  -2.185   0.0322 *  
+## Hour:GroupZymo Kit No Fragmented -0.033846   0.001929 -17.550  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.08657 on 71 degrees of freedom
+## Multiple R-squared:  0.9843, Adjusted R-squared:  0.9837 
+## F-statistic:  1487 on 3 and 71 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>The pairwise comparisons in terms of the rate of decline in available
+pores shows that Zymo Kit is always associated with a slower decline vs
+Phenol and fragmentation always has slower decline as compared with the
+“not fragmented” conditions.</p>
+<p>The two analyses for assessing the performance of the sequencing runs
+are in agreement and both undoubtedly show the superior performance of
+the Zymo Kit when used with fragmented samples. In both analyses this
+combination of conditions is markedly better then any other
+conditions.</p>
+<p>The only slight conflict in results is that in the table of predicted
+data outputs, the two “not fragmented conditions were the worst” whereas
+in the pore depletion analysis, the two phenol methods are the
+worst.</p>
 </div>
 </div>
 
