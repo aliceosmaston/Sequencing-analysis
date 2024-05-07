@@ -64,6 +64,8 @@ We can see that the predicted data output for Zymo + Fragmentation condition is 
 
 The bottom half of the table was used to calcualte how many hours to crop off the end of the run which will be used in later analysis. 
 
+## 2. Pore depletion rate over time
+
 
 # Plot the pore count data (number of active pores)
 
@@ -208,7 +210,7 @@ Zymo Kit No Fragmented = -0.086804 + 0.009686 = `r -0.086804 + 0.009686`
 
 ## Pairwise comparisons
 
-### Phenol No Fragmented vs Zymo No Fragmented. RESULT = Zymo No Fragmented is better (sig = \*\*\*)
+### Phenol No Fragmented vs Zymo No Fragmented. RESULT = Zymo No Fragmented is better 0.02 (sig = \*\*\*)
 
 ```{r}
 lm_comparison3 <- lm(log(`Normalised number of pores`) ~ Hour * Group,
@@ -217,7 +219,7 @@ lm_comparison3 <- lm(log(`Normalised number of pores`) ~ Hour * Group,
 summary(lm_comparison3)
 ```
 
-### Phenol No Fragmented vs Phenol Fragmented. RESULT = Phenol fragmented is better (sig = \*\*\*)
+### Phenol No Fragmented vs Phenol Fragmented. RESULT = Phenol no fragmented is worse -0.01 (sig = \*\*\*)
 
 ```{r}
 lm_comparison4 <- lm(log(`Normalised number of pores`) ~ Hour * Group,
@@ -225,3 +227,27 @@ lm_comparison4 <- lm(log(`Normalised number of pores`) ~ Hour * Group,
                                                  cropped_90_count$Group == 'Phenol No Fragmented',])
 summary(lm_comparison4)
 ```
+
+### Phenol Fragmented vs Zymo Fragmented. RESULT = Zymo No Fragmented is better 0.04 (sig = \*\*\*)
+
+```{r}
+lm_comparison5 <- lm(log(`Normalised number of pores`) ~ Hour * Group,
+                              data = cropped_90_count[cropped_90_count$Group == 'Zymo Kit Fragmented' | 
+                                                 cropped_90_count$Group == 'Phenol Fragmented',])
+summary(lm_comparison5)
+```
+### Zymo Kit No Fragmented vs Zymo Kit Fragmented. RESULT = Zymo Kit no fragmented is worse -0.03 (sig = \*\*\*)
+
+```{r}
+lm_comparison6 <- lm(log(`Normalised number of pores`) ~ Hour * Group,
+                              data = cropped_90_count[cropped_90_count$Group == 'Zymo Kit Fragmented' | 
+                                                 cropped_90_count$Group == 'Zymo Kit No Fragmented',])
+summary(lm_comparison6)
+```
+
+
+## Conclusion
+
+The pairwise comparisons in terms of the rate of decline in available pores shows that Zymo Kit is always associated with a slower decline vs Phenol and fragmentation always has slower decline as compared with the "not fragmented" conditions. 
+
+The two analyses for assessing the performance of the sequencing runs are in agreement and both undoubtedly show the superior performance of the Zymo Kit when used with fragmented samples. In both analyses this combination of conditions is markedly better then any other conditions.
