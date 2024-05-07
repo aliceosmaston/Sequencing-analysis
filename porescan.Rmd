@@ -16,10 +16,54 @@ knitr::opts_chunk$set(echo = T)
 # Load necessary packages
 pacman::p_load(tidyverse, dplyr, knitr, here, ggplot2)
 
-# Import the datasets from pore occupancy plots and pore scan plots
-poreoccupancy <- read_csv(here("data", "Pore_activity_%_pores_sequencing.csv"))
+# Import the datasets from pore pore scan plot
 porecount2 <- read_csv(here("data", "porecount2.csv"))
 ```
+## Run performance will be assessed by two measures and compared between the four runs:
+
+- Phenol + no fragmentation
+- Phenol + fragmentation
+- Zymo kit + no fragmentation
+- Zymo kit + fragmentation
+
+## 1. Adjusted predicted output and 2. Pore depletion rate over time
+
+### 1. Adjusted predicted output
+
+We cannot directly compare the data output from each of the four runs because there are additional factors which have influence as well as the properties of the library pool istelf and how it was prepared. If we control for two key variables then we can predict what the output would have been, if certain variables had been equal across the runs. 
+
+We have found that the there are two key attributes of the flow cell which impact total run output. These are "Initial number of pores available" and "Percentage of pores sequencing" at the start of the run. The inital number of pores available is related to the age of the flow cell but also varies between flow cells within the same batch.The first pore scan performed in a sequencing run returns the number of available pores. A higher number of pores available at the beginning of a run will result in higher data output. The "Percentage of pores sequencing" is related to the amount (fmol) of library pool you load to the flow cell. Despite selecting a loading concentration (18fmol) and diluting the library to this value, there is room for error given the tiny volumes of liqued involved <2uL and so "Percentage of pores sequencing" can be a proxy for loading concentration (fmol). If we are to compare the data output (Gb) for 4 runs with different sets of samples, we must control for these two variables across the four runs. 
+
+Our evidence from other runs suggests that loading concentration is directly correlated with "Percentage of sequencing pores" and that this can be used as a proxy. 
+```{r}
+# Creating the dataframe
+pores_data <- data.frame(
+  Run = c("Run 1", "Run 2", "Run 3", "Run 4"),
+  Input_concentration_fmol = c(20, 50, 65, 70),
+  Percent_Sequencing_Pores = c(37.2, 66.4, 80, 82.4)
+)
+
+# Viewing the dataframe
+print(pores_data)
+
+# Create the scatter plot
+ggplot(pores_data, aes(x = Input_concentration_fmol, y = Percent_Sequencing_Pores)) +
+  geom_point() +  
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  labs(x = "Flow cell loading concentration (fmol)", y = "Percentage of Sequencing Pores at the Beginning") +
+  ggtitle("Effect of loading concentration on percentage of sequencing pores") +
+  theme_minimal() 
+```
+
+The top half of the following table was use to predict the expected data output from each flow cell if it had started with 63.3% sequencing pores at the start, and 1264 pores at the beginning. 
+
+```{r echo=FALSE, out.width='50%', fig.align='center'}
+knitr::include_graphics("data/normalised_output_table.png")
+```
+We can see that the predicted data output for Zymo + Fragmentation condition is the highest. Within both the Phenol pair and the Zymo kit pair of flow cells, the one with fragmentation outperforms no fragmentation. Within the fragmented pair and the pair not fragmented, the Zymo kit outperforms the Phenol condition although the predicted values are very close between phenol not fragmented condition and the zymo not fragmented condition.  
+
+The bottom half of the table was used to calcualte how many hours to crop off the end of the run which will be used in later analysis. 
+
 
 # Plot the pore count data (number of active pores)
 
@@ -40,6 +84,8 @@ cases the number of available rises before falling. Later we will also
 removed the final part of the run, where percentage of pores sequencing
 is variable and non-informative as it tails off towards zero.
 
+### Apply a linear model to the data with the first hour cropped and normalised to all begin from the same point.
+
 ```{r}
 # Import dataset with first hour removed and normalised pore count column adjusted to the value in hour=1. 
 porecount3 <- read_csv(here("data", "porecount3.csv"))
@@ -53,8 +99,10 @@ lm_1 <- lm(log(`Number of available pores`) ~ Hour * Group, data = porecount3)
 summary(lm_1)
 
 # Plot overlaid linear model
-ggplot(data=porecount3, aes(x=Hour, y=log(`Number of available pores`),color=Group))+ geom_point() + labs(title= "Number of available pores over time") + geom_smooth(method = "lm", formula = y ~ x, se = FALSE) + theme_minimal()
+ggplot(data=porecount3, aes(x=Hour, y=log(`Normalised number of pores`),color=Group))+ geom_point() + labs(title= "Number of available pores over time (normalized)") + geom_smooth(method = "lm", formula = y ~ x, se = FALSE) + theme_minimal()
 ```
+
+The highly disperse points at the final hours of each run seem to impact the slope of the line. We should crop the final hours of each run. We will still interpret the model to compare with the next (cropped) model. 
 
 ### Interpretation of linear model coefficients:
 
